@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galeria de Claudio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section id="tela-login" class="tela-login">
+    <form id="form-login" class="cartao-login">
+      <div class="logo">🔒</div>
+      <h1>Galeria de Claudio</h1>
+      <p class="subtitulo">Área privada — digite a senha</p>
+      <input type="password" id="senha" placeholder="Senha" autocomplete="current-password" required>
+      <button type="submit" class="botao-primario">Entrar</button>
+      <p id="erro-login" class="erro" role="alert"></p>
+    </form>
+  </section>
+
+  <section id="tela-galeria" class="tela-galeria escondido">
+    <header class="topo">
+      <h1>Galeria de Claudio</h1>
+      <div class="acoes">
+        <label class="botao-primario botao-upload">
+          + Adicionar fotos
+          <input type="file" id="input-arquivos" accept="image/*" multiple hidden>
+        </label>
+        <button id="btn-sair" class="botao-secundario" type="button">Sair</button>
+      </div>
+    </header>
+    <div id="progresso" class="progresso escondido">
+      <div id="progresso-barra"></div>
+    </div>
+    <main id="grade" class="grade"></main>
+    <p id="vazio" class="vazio escondido">
+      Nenhuma foto ainda. Clique em <strong>"Adicionar fotos"</strong> ou arraste imagens para cá.
+    </p>
+  </section>
+
+  <div id="lightbox" class="lightbox escondido" role="dialog" aria-modal="true">
+    <button class="lb-fechar" id="lb-fechar" aria-label="Fechar">&times;</button>
+    <button class="lb-nav lb-ant" id="lb-ant" aria-label="Anterior">&#10094;</button>
+    <img id="lb-img" src="" alt="">
+    <button class="lb-nav lb-prox" id="lb-prox" aria-label="Próxima">&#10095;</button>
+    <div class="lb-rodape">
+      <span id="lb-info"></span>
+      <div class="lb-acoes">
+        <button id="lb-baixar" class="botao-secundario" type="button">Baixar</button>
+        <button id="lb-excluir" class="botao-perigo" type="button">Excluir</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast escondido"></div>
+  <script src="app.js"></script>
+</body>
+</html>
